@@ -1,0 +1,286 @@
+- generic [ref=e3]:
+  - generic [ref=e4]:
+    - heading "QA SWARM" [level=1] [ref=e5]
+    - textbox "Mission..." [ref=e6]
+    - button "LAUNCH" [ref=e7] [cursor=pointer]
+    - generic [ref=e8]:
+      - heading "Agents & Tools" [level=2] [ref=e9]
+      - generic [ref=e10]:
+        - generic [ref=e12]: QAOrchestrator
+        - generic [ref=e13]: Root
+      - generic [ref=e14]:
+        - generic [ref=e16]: TestGenerationAgent
+        - generic [ref=e17]: Dev
+        - generic [ref=e18]:
+          - generic [ref=e19]: read_file
+          - generic [ref=e20]: read_text_file
+          - generic [ref=e21]: read_media_file
+          - generic [ref=e22]: read_multiple_files
+          - generic [ref=e23]: write_file
+          - generic [ref=e24]: edit_file
+          - generic [ref=e25]: create_directory
+          - generic [ref=e26]: list_directory
+          - generic [ref=e27]: list_directory_with_sizes
+          - generic [ref=e28]: directory_tree
+          - generic [ref=e29]: move_file
+          - generic [ref=e30]: search_files
+          - generic [ref=e31]: get_file_info
+          - generic [ref=e32]: list_allowed_directories
+          - generic [ref=e33]: browser_file_upload
+          - generic [ref=e34]: create_or_update_file
+          - generic [ref=e35]: get_file_contents
+          - generic [ref=e36]: push_files
+          - generic [ref=e37]: list_commits
+          - generic [ref=e38]: list_issues
+          - generic [ref=e39]: list_pull_requests
+          - generic [ref=e40]: get_pull_request_files
+      - generic [ref=e41]:
+        - generic [ref=e43]: TestExecutionAgent
+        - generic [ref=e44]: DevOps
+        - generic [ref=e45]:
+          - generic [ref=e46]: run_command
+          - generic [ref=e47]: browser_close
+          - generic [ref=e48]: browser_resize
+          - generic [ref=e49]: browser_console_messages
+          - generic [ref=e50]: browser_handle_dialog
+          - generic [ref=e51]: browser_evaluate
+          - generic [ref=e52]: browser_file_upload
+          - generic [ref=e53]: browser_drop
+          - generic [ref=e54]: browser_fill_form
+          - generic [ref=e55]: browser_press_key
+          - generic [ref=e56]: browser_type
+          - generic [ref=e57]: browser_navigate
+          - generic [ref=e58]: browser_navigate_back
+          - generic [ref=e59]: browser_network_requests
+          - generic [ref=e60]: browser_network_request
+          - generic [ref=e61]: browser_run_code_unsafe
+          - generic [ref=e62]: browser_take_screenshot
+          - generic [ref=e63]: browser_snapshot
+          - generic [ref=e64]: browser_click
+          - generic [ref=e65]: browser_drag
+          - generic [ref=e66]: browser_hover
+          - generic [ref=e67]: browser_select_option
+          - generic [ref=e68]: browser_tabs
+          - generic [ref=e69]: browser_wait_for
+          - generic [ref=e70]: read_file
+          - generic [ref=e71]: write_file
+          - generic [ref=e72]: list_directory
+      - generic [ref=e73]:
+        - generic [ref=e75]: OptimizationAgent
+        - generic [ref=e76]: Architect
+        - generic [ref=e77]:
+          - generic [ref=e78]: read_file
+          - generic [ref=e79]: read_text_file
+          - generic [ref=e80]: read_media_file
+          - generic [ref=e81]: read_multiple_files
+          - generic [ref=e82]: write_file
+          - generic [ref=e83]: run_command
+      - generic [ref=e84]:
+        - generic [ref=e86]: ReportGeneratorAgent
+        - generic [ref=e87]: Reporter
+        - generic [ref=e88]:
+          - generic [ref=e89]: read_file
+          - generic [ref=e90]: read_text_file
+          - generic [ref=e91]: read_media_file
+          - generic [ref=e92]: read_multiple_files
+          - generic [ref=e93]: write_file
+  - generic [ref=e94]:
+    - generic [ref=e95]:
+      - generic [ref=e96]: Telemetry
+      - button "VIEW REPORT" [ref=e115] [cursor=pointer]
+    - generic [ref=e98]:
+      - generic [ref=e99]:
+        - generic [ref=e100]: "[08:00:07]"
+        - text: "🚀 PIPELINE TRIGGERED: \"Analyze target/session.js and ensure the code is production-ready.\""
+      - generic [ref=e101]:
+        - generic [ref=e102]: "[08:00:09]"
+        - text: "🛠️ TestExecutionAgent: [browser_run_code_unsafe]"
+      - generic [ref=e103]:
+        - generic [ref=e104]: "[08:00:09]"
+        - text: "✅ TestExecutionAgent: [browser_run_code_unsafe]"
+      - generic [ref=e105]:
+        - generic [ref=e106]: "[08:00:09]"
+        - text: "👤 AGENT ACTIVE: [TestGenerationAgent]"
+      - generic [ref=e107]:
+        - generic [ref=e108]: "[08:00:10]"
+        - text: "🛠️ OptimizationAgent: [write_file]"
+      - generic [ref=e109]:
+        - generic [ref=e110]: "[08:00:10]"
+        - text: "✅ OptimizationAgent: [write_file]"
+      - generic [ref=e111]:
+        - generic [ref=e112]: "[08:00:11]"
+        - text: "👤 AGENT ACTIVE: [TestExecutionAgent]"
+      - generic [ref=e113]:
+        - generic [ref=e114]: "[08:00:11]"
+        - text: "🛠️ TestExecutionAgent: [read_file]"
+      - generic [ref=e116]:
+        - generic [ref=e117]: "[08:00:11]"
+        - text: "✅ TestExecutionAgent: [read_file]"
+      - generic [ref=e118]:
+        - generic [ref=e119]: "[08:00:12]"
+        - text: "🛠️ TestExecutionAgent: [browser_run_code_unsafe]"
+      - generic [ref=e120]:
+        - generic [ref=e121]: "[08:00:12]"
+        - text: "✅ TestExecutionAgent: [browser_run_code_unsafe]"
+      - generic [ref=e122]:
+        - generic [ref=e123]: "[08:00:12]"
+        - text: "✅ TestExecutionAgent: [run_command]"
+      - generic [ref=e124]:
+        - generic [ref=e125]: "[08:00:14]"
+        - text: "🛠️ TestExecutionAgent: [read_file]"
+      - generic [ref=e126]:
+        - generic [ref=e127]: "[08:00:14]"
+        - text: "🛠️ TestExecutionAgent: [browser_click]"
+      - generic [ref=e128]:
+        - generic [ref=e129]: "[08:00:14]"
+        - text: "✅ TestExecutionAgent: [read_file]"
+      - generic [ref=e130]:
+        - generic [ref=e131]: "[08:00:14]"
+        - text: "✅ TestExecutionAgent: [browser_click]"
+      - generic [ref=e132]:
+        - generic [ref=e133]: "[08:00:16]"
+        - text: "🛠️ TestExecutionAgent: [write_file]"
+      - generic [ref=e134]:
+        - generic [ref=e135]: "[08:00:16]"
+        - text: "✅ TestExecutionAgent: [write_file]"
+      - generic [ref=e136]:
+        - generic [ref=e137]: "[08:00:16]"
+        - text: "👤 AGENT ACTIVE: [ReportGeneratorAgent]"
+      - generic [ref=e138]:
+        - generic [ref=e139]: "[08:00:16]"
+        - text: 🏁 PIPELINE COMPLETED
+      - generic [ref=e140]:
+        - generic [ref=e141]: "[08:00:18]"
+        - text: "🛠️ TestExecutionAgent: [read_file]"
+      - generic [ref=e142]:
+        - generic [ref=e143]: "[08:00:18]"
+        - text: "✅ TestExecutionAgent: [read_file]"
+      - generic [ref=e144]:
+        - generic [ref=e145]: "[08:00:18]"
+        - text: "🛠️ TestExecutionAgent: [browser_navigate]"
+      - generic [ref=e146]:
+        - generic [ref=e147]: "[08:00:18]"
+        - text: "✅ TestExecutionAgent: [browser_navigate]"
+      - generic [ref=e148]:
+        - generic [ref=e149]: "[08:00:19]"
+        - text: "👤 AGENT ACTIVE: [OptimizationAgent]"
+      - generic [ref=e150]:
+        - generic [ref=e151]: "[08:00:21]"
+        - text: "🛠️ TestExecutionAgent: [browser_snapshot]"
+      - generic [ref=e152]:
+        - generic [ref=e153]: "[08:00:21]"
+        - text: "✅ TestExecutionAgent: [browser_snapshot]"
+      - generic [ref=e154]:
+        - generic [ref=e155]: "[08:00:23]"
+        - text: "👤 AGENT ACTIVE: [ReportGeneratorAgent]"
+      - generic [ref=e156]:
+        - generic [ref=e157]: "[08:00:23]"
+        - text: 🏁 PIPELINE COMPLETED
+      - generic [ref=e158]:
+        - generic [ref=e159]: "[08:00:23]"
+        - text: "🛠️ TestExecutionAgent: [browser_take_screenshot]"
+      - generic [ref=e160]:
+        - generic [ref=e161]: "[08:00:24]"
+        - text: "✅ TestExecutionAgent: [browser_take_screenshot]"
+      - generic [ref=e162]:
+        - generic [ref=e163]: "[08:00:24]"
+        - text: "🛠️ TestExecutionAgent: [write_file]"
+      - generic [ref=e164]:
+        - generic [ref=e165]: "[08:00:24]"
+        - text: "✅ TestExecutionAgent: [write_file]"
+      - generic [ref=e166]:
+        - generic [ref=e167]: "[08:00:26]"
+        - text: "🛠️ TestExecutionAgent: [browser_type]"
+      - generic [ref=e168]:
+        - generic [ref=e169]: "[08:00:26]"
+        - text: "🛠️ TestExecutionAgent: [browser_click]"
+      - generic [ref=e170]:
+        - generic [ref=e171]: "[08:00:26]"
+        - text: "🛠️ TestExecutionAgent: [browser_navigate]"
+      - generic [ref=e172]:
+        - generic [ref=e173]: "[08:00:26]"
+        - text: "✅ TestExecutionAgent: [browser_navigate]"
+      - generic [ref=e174]:
+        - generic [ref=e175]: "[08:00:26]"
+        - text: "✅ TestExecutionAgent: [browser_type]"
+      - generic [ref=e176]:
+        - generic [ref=e177]: "[08:00:26]"
+        - text: "✅ TestExecutionAgent: [browser_click]"
+      - generic [ref=e178]:
+        - generic [ref=e179]: "[08:00:28]"
+        - text: "🛠️ TestExecutionAgent: [browser_snapshot]"
+      - generic [ref=e180]:
+        - generic [ref=e181]: "[08:00:28]"
+        - text: "🛠️ TestExecutionAgent: [run_command]"
+      - generic [ref=e182]:
+        - generic [ref=e183]: "[08:00:28]"
+        - text: "✅ TestExecutionAgent: [browser_snapshot]"
+      - generic [ref=e184]:
+        - generic [ref=e185]: "[08:00:30]"
+        - text: "🛠️ TestExecutionAgent: [browser_type]"
+      - generic [ref=e186]:
+        - generic [ref=e187]: "[08:00:30]"
+        - text: "🛠️ TestExecutionAgent: [browser_click]"
+      - generic [ref=e188]:
+        - generic [ref=e189]: "[08:00:30]"
+        - text: "✅ TestExecutionAgent: [browser_type]"
+      - generic [ref=e190]:
+        - generic [ref=e191]: "[08:00:30]"
+        - text: "✅ TestExecutionAgent: [browser_click]"
+      - generic [ref=e192]:
+        - generic [ref=e193]: "[08:00:32]"
+        - text: "🛠️ TestExecutionAgent: [browser_type]"
+      - generic [ref=e194]:
+        - generic [ref=e195]: "[08:00:32]"
+        - text: "🛠️ TestExecutionAgent: [browser_click]"
+      - generic [ref=e196]:
+        - generic [ref=e197]: "[08:00:32]"
+        - text: "✅ TestExecutionAgent: [browser_type]"
+      - generic [ref=e198]:
+        - generic [ref=e199]: "[08:00:32]"
+        - text: "✅ TestExecutionAgent: [browser_click]"
+      - generic [ref=e200]:
+        - generic [ref=e201]: "[08:00:34]"
+        - text: "🛠️ TestExecutionAgent: [browser_run_code_unsafe]"
+      - generic [ref=e202]:
+        - generic [ref=e203]: "[08:00:35]"
+        - text: "✅ TestExecutionAgent: [browser_run_code_unsafe]"
+      - generic [ref=e204]:
+        - generic [ref=e205]: "[08:00:38]"
+        - text: "🛠️ TestExecutionAgent: [browser_snapshot]"
+      - generic [ref=e206]:
+        - generic [ref=e207]: "[08:00:38]"
+        - text: "✅ TestExecutionAgent: [browser_snapshot]"
+      - generic [ref=e208]:
+        - generic [ref=e209]: "[08:00:42]"
+        - text: "🛠️ TestExecutionAgent: [browser_run_code_unsafe]"
+      - generic [ref=e210]:
+        - generic [ref=e211]: "[08:00:42]"
+        - text: "✅ TestExecutionAgent: [browser_run_code_unsafe]"
+      - generic [ref=e212]:
+        - generic [ref=e213]: "[08:00:52]"
+        - text: "🛠️ TestExecutionAgent: [browser_run_code_unsafe]"
+      - generic [ref=e214]:
+        - generic [ref=e215]: "[08:00:52]"
+        - text: "✅ TestExecutionAgent: [browser_run_code_unsafe]"
+      - generic [ref=e216]:
+        - generic [ref=e217]: "[08:00:56]"
+        - text: "🛠️ TestExecutionAgent: [browser_run_code_unsafe]"
+      - generic [ref=e218]:
+        - generic [ref=e219]: "[08:00:56]"
+        - text: "✅ TestExecutionAgent: [browser_run_code_unsafe]"
+      - generic [ref=e220]:
+        - generic [ref=e221]: "[08:01:01]"
+        - text: "🛠️ TestExecutionAgent: [browser_run_code_unsafe]"
+      - generic [ref=e222]:
+        - generic [ref=e223]: "[08:01:01]"
+        - text: "🛠️ TestExecutionAgent: [browser_click]"
+      - generic [ref=e224]:
+        - generic [ref=e225]: "[08:01:06]"
+        - text: "✅ TestExecutionAgent: [browser_click]"
+      - generic [ref=e226]:
+        - generic [ref=e227]: "[08:01:10]"
+        - text: "🛠️ TestExecutionAgent: [browser_wait_for]"
+      - generic [ref=e228]:
+        - generic [ref=e229]: "[08:01:10]"
+        - text: "🛠️ TestExecutionAgent: [browser_click]"

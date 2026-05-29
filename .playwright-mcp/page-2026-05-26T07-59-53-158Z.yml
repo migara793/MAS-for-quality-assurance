@@ -1,0 +1,7 @@
+- generic [ref=e3]:
+  - generic [ref=e4]:
+    - heading "QA SWARM" [level=1] [ref=e5]
+    - textbox "Mission..." [ref=e6]
+    - button "LAUNCH" [ref=e7] [cursor=pointer]
+    - heading "Agents & Tools" [level=2] [ref=e9]
+  - generic [ref=e12]: Telemetry

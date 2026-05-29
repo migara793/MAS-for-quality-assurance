@@ -1,0 +1,25 @@
+# Environments
+.env
+.venv
+env/
+venv/
+
+# Node.js
+node_modules/
+package-lock.json
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Agent state and logs
+.adk/
+adk_web.log
+tools_dump.json
+test-results/
+QA_REPORT.md
+
+# OS files
+.DS_Store
+Thumbs.db

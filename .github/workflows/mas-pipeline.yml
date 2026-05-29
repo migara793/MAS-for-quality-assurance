@@ -1,0 +1,84 @@
+name: MAS Autonomous QA Pipeline
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  qa-swarm:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Create .env file
+        run: |
+          echo "GEMINI_API_KEY=${{ secrets.GEMINI_API_KEY }}" >> .env
+          echo "GEMINI_MODEL=gemini-2.0-flash" >> .env
+          echo "GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}" >> .env
+          echo "N8N_GATEWAY_URL=http://localhost:5678/webhook/mcp" >> .env
+          echo "QDRANT_HOST=qdrant" >> .env
+
+      - name: Start MAS Swarm
+        run: docker compose up --build -d
+
+      - name: Wait for System Readiness
+        run: |
+          echo "Waiting for services to initialize..."
+          MAX_RETRIES=30
+          COUNT=0
+          until $(curl --output /dev/null --silent --head --fail http://localhost:8000/health); do
+            printf '.'
+            sleep 10
+            COUNT=$((COUNT+1))
+            if [ $COUNT -ge $MAX_RETRIES ]; then
+              echo "Timeout waiting for MAS to start"
+              docker compose logs
+              exit 1
+            fi
+          done
+          echo "MAS is Ready!"
+
+      - name: Trigger Autonomous QA Mission
+        run: |
+          RESPONSE=$(curl -X POST http://localhost:8000/run \
+            -H "Content-Type: application/json" \
+            -d '{"request": "Perform a full autonomous QA audit. Focus on E2E testing with Playwright for the frontend and unit tests for project/main.py. Update QA_REPORT.md with findings."}')
+          echo "Trigger Response: $RESPONSE"
+
+      - name: Monitor Progress
+        run: |
+          echo "Monitoring logs for completion..."
+          MAX_WAIT=600 # 10 minutes
+          ELAPSED=0
+          until docker compose exec -T qa-swarm ls QA_REPORT.md > /dev/null 2>&1; do
+            sleep 15
+            ELAPSED=$((ELAPSED+15))
+            if [ $ELAPSED -ge $MAX_WAIT ]; then
+              echo "Timeout waiting for QA_REPORT.md"
+              docker compose logs qa-swarm
+              exit 1
+            fi
+            echo "Waiting for report... ($ELAPSED/$MAX_WAIT)"
+          done
+
+      - name: Archive QA Report
+        run: |
+          docker compose exec -T qa-swarm cat QA_REPORT.md > QA_REPORT_FINAL.md
+          echo "--- QA REPORT ---"
+          cat QA_REPORT_FINAL.md
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: qa-report
+          path: QA_REPORT_FINAL.md
+
+      - name: Stop Services
+        if: always()
+        run: docker compose down

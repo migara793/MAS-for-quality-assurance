@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>UI Test Demo</title>
+</head>
+<body>
+    <input type="text" id="input-field">
+    <button id="my-button">Click me</button>
+    <div id="success-message"></div>
+
+    <script>
+        document.getElementById("my-button").addEventListener("click", function() {
+            var inputValue = document.getElementById("input-field").value;
+            document.getElementById("success-message").innerText = inputValue;
+        });
+    </script>
+</body>
+</html>
