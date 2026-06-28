@@ -1,9 +1,0 @@
-This is a placeholder performance audit report.
-
-A real performance audit requires access to the application and the ability to run performance testing tools (e.g., load testing, profiling).
-
-Next steps:
-1. Deploy the application to a test environment.
-2. Configure and run performance testing tools to simulate realistic user load.
-3. Analyze the results and identify performance bottlenecks.
-4. Optimize the application to improve performance.

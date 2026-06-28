@@ -1,8 +1,0 @@
-This is a placeholder security audit report.
-
-A real security audit requires access to the application's codebase and the ability to run security scanning tools (e.g., static analysis, vulnerability scanners).
-
-Next steps:
-1. Grant access to the codebase.
-2. Configure and run security scanning tools.
-3. Analyze the results and address any identified vulnerabilities.
